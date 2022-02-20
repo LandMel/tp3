@@ -1,17 +1,44 @@
-name: Publish Package to npm
+name: NPM publish package
+
 on: push
- 
+#  release:
+#    # This specifies that the build will be triggered when we publish a release
+#    types: [published]
+
 jobs:
- package-post:
-  name: post
-  runs-on: ubuntu-latest
-  steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16.x'
-          
-      - name: NPM Publish
-        uses: JS-DevTools/npm-publish@v1
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+  build:
+
+    # Run on latest version of ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      #with:
+        # "ref" specifies the branch to check out.
+        # "github.event.release.target_commitish" is a global variable and specifies the branch the release targeted
+        #ref: ${{ github.event.release.target_commitish }}
+    # install Node.js
+    - name: Use Node.js 12
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+        # Specifies the registry, this field is required!
+        registry-url: https://registry.npmjs.org/
+    # clean install of your projects' deps. We use "npm ci" to avoid package lock changes
+    - run: npm ci
+    # set up git since we will later push to the repo
+    - run: git config --global user.name "LandMel"
+    - run: git config --global user.email "mel.land33@gmail.com"
+    # upgrade npm version in package.json to the tag used in the release.
+    # clean working directory
+    - run: git stash
+    - run: npm version patch
+    - run: npm publish
+      env:
+        # Use a token to publish to NPM. See below for how to set it up
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    # push the version changes to GitHub
+    - run: git push
+      env:
+        # The secret is passed automatically. Nothing to configure.
+        github-token: ${{ secrets.GITHUB_TOKEN }}
