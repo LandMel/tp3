@@ -10,7 +10,7 @@ jobs:
       uses: actions/checkout@v2
       
     - name: version update
-      run: version patch
+      run: npm version patch
         
     - name: NPM Publish
       uses: JS-DevTools/npm-publish@v1
