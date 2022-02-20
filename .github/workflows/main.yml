@@ -1,0 +1,16 @@
+on: pull_request
+name: post package
+jobs:
+  package-post:
+    name: post
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Get latest codes
+      uses: actions/checkout@v2
+    
+    - name: build
+      run: build
+      
+    - name: NPM Publish
+      uses: JS-DevTools/npm-publish@v1
