@@ -28,7 +28,9 @@
     "fix:style": "npx stylelint ./src/ --fix",
     "start:docs": "start-storybook -p 6006 -s public",
     "build:docs": "build-storybook -s public",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prepublish": "npm-auto-version",
+    "postpublish": "git push origin --tags"
   },
   "eslintConfig": {
     "extends": "react-app"
