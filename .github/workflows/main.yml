@@ -13,4 +13,4 @@ jobs:
       run: build
       
     - name: NPM Publish
-      uses: JS-DevTools/npm-publish@v2
+      uses: JS-DevTools/npm-publish@v1
