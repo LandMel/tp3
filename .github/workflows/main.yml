@@ -1,4 +1,4 @@
-on: pull_request
+on: push
 name: post package
 jobs:
   package-post:
@@ -13,4 +13,4 @@ jobs:
       run: build
       
     - name: NPM Publish
-      uses: JS-DevTools/npm-publish@v1
+      uses: JS-DevTools/npm-publish@v2
