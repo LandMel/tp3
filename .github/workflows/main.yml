@@ -8,9 +8,6 @@ jobs:
 
     - name: Get latest codes
       uses: actions/checkout@v2
-    
-    - name: build
-      run: build
       
     - name: NPM Publish
       uses: JS-DevTools/npm-publish@v1
