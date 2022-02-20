@@ -12293,6 +12293,13 @@
     "query-string" "^4.1.0"
     "sort-keys" "^1.0.0"
 
+"npm-auto-version@^1.0.0":
+  "integrity" "sha1-b21s8b2JEL5U71DnOMCfgSWE3jI="
+  "resolved" "https://registry.npmjs.org/npm-auto-version/-/npm-auto-version-1.0.0.tgz"
+  "version" "1.0.0"
+  dependencies:
+    "semver" "^5.0.3"
+
 "npm-bundled@^1.1.1":
   "integrity" "sha512-x5DHup0SuyQcmL3s7Rx/YQ8sbw/Hzg0rj48eN0dV7hf5cmQq5PXIeioroH3raV1QC1yh3uTYuMThvEQF3iKgGQ=="
   "resolved" "https://registry.npmjs.org/npm-bundled/-/npm-bundled-1.1.2.tgz"
@@ -15844,6 +15851,11 @@
   "integrity" "sha1-De4hahyUGrN+nvsXiPavxf9VN/w="
   "resolved" "https://registry.npmjs.org/semver-compare/-/semver-compare-1.0.0.tgz"
   "version" "1.0.0"
+
+"semver@^5.0.3":
+  "integrity" "sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ=="
+  "resolved" "https://registry.npmjs.org/semver/-/semver-5.7.1.tgz"
+  "version" "5.7.1"
 
 "semver@^5.4.1":
   "integrity" "sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ=="
