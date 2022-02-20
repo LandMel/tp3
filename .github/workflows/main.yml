@@ -9,13 +9,6 @@ jobs:
     - name: Get latest codes
       uses: actions/checkout@v2
       
-    - name: npm config
-      run: git config --global user.email "mel.land33@gmail.com",
-        git config --global user.name "elfe_mel"
-      
-    - name: version update
-      run: npm version patch
-        
     - name: NPM Publish
       uses: JS-DevTools/npm-publish@v1
       
