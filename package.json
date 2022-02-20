@@ -2,7 +2,7 @@
   "resolutions": {
     "@storybook/csf-tools": "6.4.0-beta.20"
   },
-  "name": "mlandry-tp3",
+  "name": "npm-package-tp3",
   "version": "1.0.0",
   "description": "components-packages",
   "license": "MIT",
